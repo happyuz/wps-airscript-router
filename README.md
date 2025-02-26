@@ -36,7 +36,7 @@ export default bootstrap()
 ```
 
 ## 直接在AirScript中使用
-1. 将dist/index.js中的代码复制到airscript脚本编辑器第一行
+1. 将dist/browser/index.js中的代码复制到airscript脚本编辑器第一行
 2. 新增以下代码
 ```javascript
 const app = AppFactory.createApp()
