@@ -23,7 +23,7 @@
   "homepage": "https://github.com/happyuz/wps-airscript-router",
   "repository": {
     "type": "git",
-    "url": "https://github.com/happyuz/wps-airscript-router"
+    "url": "https://github.com/happyuz/wps-airscript-router.git"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^28.0.2",
