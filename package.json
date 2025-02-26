@@ -1,0 +1,42 @@
+{
+  "name": "wps-airscript-router",
+  "version": "0.0.1",
+  "type": "module",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "browser": "./dist/browser/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "npm run clean && npm run compile",
+    "compile": "rollup -c",
+    "clean": "rm -rf ./dist"
+  },
+  "keywords": [
+    "wps",
+    "airscript",
+    "webhook",
+    "route"
+  ],
+  "author": "happyuz",
+  "license": "MIT",
+  "description": "一个简单的WPS AirScript应用框架，尤其适用于Webhook调用场景。",
+  "homepage": "https://github.com/happyuz/wps-airscript-router",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/happyuz/wps-airscript-router"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^28.0.2",
+    "@rollup/plugin-node-resolve": "^16.0.0",
+    "@rollup/plugin-terser": "^0.4.4",
+    "rollup": "^4.34.8",
+    "rollup-plugin-dts": "^6.1.1",
+    "rollup-plugin-typescript2": "^0.36.0",
+    "typescript": "^5.7.3"
+  },
+  "files": [
+    "dist",
+    "package.json",
+    "README.md"
+  ]
+}
