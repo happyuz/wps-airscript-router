@@ -1,15 +1,33 @@
+/*! wps-airscript-router v0.0.1 */
 'use strict';
 
+const formatPath = (path) => {
+    return path.startsWith('/') ? path : `/${path}`;
+};
+const parseRouteList = (routeList) => {
+    const routes = {};
+    routeList.forEach((route) => {
+        const { path, handle, children = [] } = route;
+        const parentPath = formatPath(path);
+        if (handle) {
+            routes[parentPath] = handle;
+        }
+        if (children.length > 0) {
+            const fullPathChildren = children.map((child) => {
+                return Object.assign(Object.assign({}, child), { path: parentPath + formatPath(child.path) });
+            });
+            const childRoutes = parseRouteList(fullPathChildren);
+            Object.assign(routes, childRoutes);
+        }
+    });
+    return routes;
+};
 const AppFactory = {
     createApp: (routeConfig) => {
         const app = {};
         app.defaultHandle = () => null;
         app.errorHandle = (error) => error;
-        const routes = {};
-        const _routeConfig = routeConfig || [];
-        _routeConfig.forEach(route => {
-            routes[route.path] = route.handle;
-        });
+        const routes = parseRouteList(routeConfig || []);
         app.routes = routes;
         app.route = (path, handle) => {
             routes[path] = handle;
@@ -32,7 +50,7 @@ const AppFactory = {
             };
         };
         return app;
-    }
+    },
 };
 
 module.exports = AppFactory;

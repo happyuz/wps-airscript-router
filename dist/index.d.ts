@@ -1,3 +1,4 @@
+/*! wps-airscript-router v0.0.1 */
 type TRoutes = Record<string, Function>;
 type THandle = () => any;
 type TErrorHandle = (error: any) => any;
@@ -40,11 +41,13 @@ interface IApp {
      */
     setErrorHandle(handle: TErrorHandle): void;
 }
+interface IRoute {
+    path: string;
+    handle: THandle;
+    children?: IRoute[];
+}
 declare const AppFactory: {
-    createApp: (routeConfig?: Array<{
-        path: string;
-        handle: THandle;
-    }>) => IApp;
+    createApp: (routeConfig?: Array<IRoute>) => IApp;
 };
 
-export { AppFactory as default };
+export { type IRoute, AppFactory as default };
