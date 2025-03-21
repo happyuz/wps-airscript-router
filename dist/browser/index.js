@@ -1,2 +1,2 @@
-/*! wps-airscript-router v0.0.1 */
+/*! wps-airscript-router v1.0.1 */
 var AppFactory=function(){"use strict";const t=t=>t.startsWith("/")?t:`/${t}`,e=r=>{const n={};return r.forEach((r=>{const{path:a,handle:s,children:l=[]}=r,c=t(a);if(s&&(n[c]=s),l.length>0){const r=l.map((e=>Object.assign(Object.assign({},e),{path:c+t(e.path)}))),a=e(r);Object.assign(n,a)}})),n};return{createApp:t=>{const r={defaultHandle:()=>null,errorHandle:t=>t},n=e(t||[]);return r.routes=n,r.route=(t,e)=>{n[t]=e},r.setDefaultHandle=t=>{r.defaultHandle=t},r.setErrorHandle=t=>{r.errorHandle=t},r.getHandle=t=>{const e=n[t]||r.defaultHandle;return()=>{try{return e()}catch(t){return r.errorHandle(t)}}},r}}}();

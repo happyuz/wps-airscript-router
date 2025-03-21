@@ -1,4 +1,4 @@
-/*! wps-airscript-router v0.0.1 */
+/*! wps-airscript-router v1.0.1 */
 type TRoutes = Record<string, Function>;
 type THandle = () => any;
 type TErrorHandle = (error: any) => any;
