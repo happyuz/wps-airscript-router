@@ -1,4 +1,4 @@
-/*! wps-airscript-router v1.0.1 */
+/*! wps-airscript-router v1.0.3 */
 const formatPath = (path) => {
     return path.startsWith('/') ? path : `/${path}`;
 };
