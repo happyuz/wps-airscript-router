@@ -3,6 +3,18 @@ type TRoutes = Record<string, Function>;
 type THandle = () => any;
 type TErrorHandle = (error: any) => any;
 
+export type IRoute =
+  | {
+      path: string;
+      handle: THandle;
+      children?: undefined;
+    }
+  | {
+      path: string;
+      handle?: THandle;
+      children: IRoute[];
+    };
+
 interface IApp {
   /**
    * 路由对象，keyMap格式，对应路径和处理函数
@@ -41,12 +53,6 @@ interface IApp {
    * @returns
    */
   setErrorHandle(handle: TErrorHandle): void;
-}
-
-export interface IRoute {
-  path: string;
-  handle: THandle;
-  children?: IRoute[];
 }
 
 const formatPath = (path: string) => {
