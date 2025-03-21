@@ -1,4 +1,4 @@
-/*! wps-airscript-router v1.0.3 */
+/*! wps-airscript-router v1.0.4 */
 'use strict';
 
 const formatPath = (path) => {

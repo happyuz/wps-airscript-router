@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/happyuz/wps-airscript-router/compare/v1.0.3...v1.0.4) (2025-03-21)
+
+
+### Bug Fixes
+
+* 类型定义完善 ([70446a9](https://github.com/happyuz/wps-airscript-router/commit/70446a90fbb329be6dcdf178a78df776273e36eb))
+
 ## [1.0.3](https://github.com/happyuz/wps-airscript-router/compare/v1.0.2...v1.0.3) (2025-03-21)
 
 
