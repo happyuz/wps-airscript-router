@@ -1,6 +1,6 @@
 {
   "name": "wps-airscript-router",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "type": "module",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
